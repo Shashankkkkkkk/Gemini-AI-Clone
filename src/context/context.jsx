@@ -27,6 +27,7 @@ export const ContextProvider = ( props ) => {
     const onSent = async (prompt) => {
 
         setResultData("");
+        setInput("");
         setLoading(true);
         setShowResult(true);
         let response;
@@ -59,7 +60,7 @@ export const ContextProvider = ( props ) => {
         }
 
         setLoading(false);
-        setInput("");
+        
     }
 
     const contextValue = {

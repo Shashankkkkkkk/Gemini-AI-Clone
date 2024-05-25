@@ -7,6 +7,13 @@ const Main = () => {
 
     const {onSent, recentPrompt, showResult, loading, resultData, setInput, input} = useContext(Context);
 
+    const handleClickCard = (e) => {
+        
+        const prompt = e.target.childNodes[0].textContent;
+        
+        onSent(prompt);
+    }
+
   return (
     <div className='main'>
         <div className="nav">
@@ -23,19 +30,19 @@ const Main = () => {
                 <p>How can I help you</p>
            </div>
            <div className="cards">
-                <div className="card">
+                <div onClick={handleClickCard} className="card">
                     <p>Suggest best destinations for the seasonal trip</p>
                     <img src={assets.compass_icon} alt="" />
                 </div>
-                <div className="card">
+                <div onClick={handleClickCard}  className="card">
                     <p>Explain java and summarize with an example</p>
                     <img src={assets.bulb_icon} alt="" />
                 </div>
-                <div className="card">
+                <div onClick={handleClickCard} className="card">
                     <p>Brainstorm team bonding activites for our work</p>
                     <img src={assets.message_icon} alt="" />
                 </div>
-                <div className="card">
+                <div onClick={handleClickCard} className="card">
                     <p>Improve the readebility of the following code</p>
                     <img src={assets.code_icon} alt="" />
                 </div>
